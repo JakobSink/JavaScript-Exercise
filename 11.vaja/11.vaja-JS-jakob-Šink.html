@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <meta charset="UTF-8">
+        <title>11. vaja: Matematične funkcije v JavaScriptu</title>
+
+        <style>
+            body{
+                background-color: rgba(240,240,240,0.35);
+                font-family: sans-serif;
+            }
+            h1{
+                color: rgba(252,98,100,1.0);
+                text-align: center;
+            }
+            table{
+                background-color: rgba(240,240,240,0.85);
+                width: 500px;
+                margin:auto;
+            }
+            tr{
+                height: 3em;
+                vertical-align: top;
+            }
+            input{
+                background: rgba(249,131,133,0.25);
+                padding: 1px;
+                border-radius: 5px;
+                font-size: 1.1em;
+                border: none;
+            }
+            select{
+                padding: 5px;
+                background: rgba(166,186,252,1.0);
+                font-size: 1.em;
+            }
+            .center{
+                text-align: center;
+            }
+            .visina{
+                vertical-align: bottom;
+            }
+            h1{
+                text-align: center;
+                color: rgba(252,98,100,1.0);
+            }
+            #rezultat{
+                background-color: rgb(164,245,211,1.0);
+            }
+        </style>
+
+        <script>
+            function izracunaj ()
+            {
+                var vnos = document.obrazec.stevilo.value;
+                var operacija = document.obrazec.izbira.value;
+                var izhod = 0;
+                var vnosSt = Number(vnos);
+
+                if (operacija == "fixed"){izhod = vnosSt.toFixed(3);}
+                if (operacija == "precision"){izhod = vnosSt.toPrecision(4);}
+                if (operacija == "exponent"){izhod = vnosSt.toExponential(3);}
+                if (operacija == "round"){izhod = Math.round(vnosSt);}
+                if (operacija == "naslednjecelo"){izhod = Math.ceil(vnosSt);}
+                if (operacija == "prejsnjecelo"){izhod = Math.floor(vnosSt);}
+                if (operacija == "pozitivno"){izhod = Math.abs(vnosSt);}
+                if (operacija == "random"){izhod = Math.random(vnosSt);}
+
+                document.getElementById("rezultat").value = izhod;
+            }
+        </script>
+    </head>
+    <body>
+       <h1>Matematične funkcije</h1>
+       <form name="obrazec">
+            <table>
+                <tr>
+                    <td>Vnesi vrednost:</td>
+                    <td class="center">Izberi operacijo:</td>
+                    <td>Rezultat</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value="10.54321" id="stevilo" name="stevilo" size="10">
+                    </td>
+                    <td>
+                        <select id="izbira"name="izbira" onchange="izracunaj()">
+                            <option>- izberi -</option>
+                            <option value="fixed">zaokroži na 3 decimalke</option>
+                            <option value="precision">4 mestno število</option>
+                            <option value="exponent">eksponentno na 3 decimalke</option>
+                            <option value="round">zaokroženo število</option>
+                            <option value="naslednjecelo">naslednje celo število</option>
+                            <option value="prejsnjecelo">prejšnje celo število</option>
+                            <option value="pozitivno">pozitivno število</option>
+                            <option value="random">naklučno število</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" name="izips" id="rezultat" size="20" disabled>
+                    </td>
+                </tr>
+            </table>
+       </form>
+    </body>
+</html>

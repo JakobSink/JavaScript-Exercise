@@ -1,0 +1,108 @@
+<!DOCTYPE >
+<html lang="sl">
+    <head>
+        <meata charset = "UFT-8">
+        <title>9. vaja: Dogodki v JavaScriptu</title>
+
+        <style>
+            body{
+                font-family: Arial, sans;
+                background-color: auto;
+            }
+            h1{
+                color:blue;
+                text-align: center;
+            }
+            table{
+                outline: 1px solid grey;
+                border-radius: 5px;
+                padding: 10px;
+                background-color: rgb(252, 211, 109, 1.0);
+                margin-left: auto;
+                margin-right: auto;
+                width: 400px;
+            }
+            input{
+                background-color: rgb(245, 219, 143, 1.0);
+                height: 40px;
+                color: red;
+                font-size: 25px;
+                text-align: center;
+                font-weight: bold;
+                width: 200px;
+                border-color: lightgray;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pretvorniki</h1>
+
+        <script>
+            function pretvotba(temp, izbira) {
+                let c, f, k;
+                let temp;
+                switch(izbira){
+                    case "c": 
+                        c = temp;
+                        if(temp){
+                            f = (temp * 9/5) + 32;
+                            k = temp + 273;
+                        }
+                        else{
+                            f = "";
+                            k = "";
+                        }
+                        break;
+
+                    case "f": 
+                        cf = temp;
+                        if(temp){
+                            c = (5/9) * (temp - 32);
+                            k = (5/9) * (temp - 32) + 273
+                        }
+                        else{
+                            c = "";
+                            k = "";
+                        }
+
+                        break;
+
+                    case "k": 
+                        k = temp;
+                        if(temp){
+                            f = ((temp - 273) * 9/5) + 32
+                            c = temp - 273;
+                        }
+                        else{
+                            f = "";
+                            c = "";
+                        }
+                        break;
+                }
+                document.getElementById("c").value = c;
+                document.getElementById("f").value = f;
+                document.getElementById("l").value = k;
+            }
+        </script>
+
+        <form name="obrazec">
+            <table>
+                <tr>
+                    <td>Stopinj celzija:</td>
+                    <td><input id="prvi" onkeyup="pretvornik" name="c" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Stopinj Fahrenheita:</td>
+                    <td><input id="drugi" name="f" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Stopinj Kelvin</td>
+                    <td><input id="tretji" name="k" type="text"></td>
+                </tr>
+            </table>
+        </form>
+
+        
+    </body>
+</html>

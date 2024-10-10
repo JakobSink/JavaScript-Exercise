@@ -1,0 +1,96 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>14.vaja</title>
+		
+		<style>
+			body{
+				font-family: sans-serif;
+			}
+			h1{
+				color: rgba(249,106,108,1.0);
+				border-bottom: 1px solid rgba(249,106,108,1.0);
+			}
+			div{
+				color: silver;
+				font-size: 110%;
+				font-weight: bold;
+				border-bottom: 1px dotted silver;
+				text-shadow: 1px 1px grey;
+			}
+			span{
+				font-weight:bold;
+			}
+			footer{
+				background-color: grey;
+				text-align:center;
+				color:white;
+				height: 200px;
+			}
+			footer{
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 200px;
+				background-color: gray;
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Datum in čas</h1>
+		
+		<div>Prikaz tekočega datuma</div>
+		<p>Danes smo: <span id="datum"></span></p>
+		
+		<div>Prikaz tekočega časa</div>
+		<p>Ura je: <span id="cas"></span></p>
+		
+		<div>Prikaz tekočega časa v formatu AM/PM</div>
+		<p>Ura je: <span id="casm"></span></p>
+		
+		
+		<script>
+			//Tekoči datum
+			var datum = new Date();
+			var dan = datum.getDate();
+			var mesec = datum.getMonth()+1;
+			var leto = datum.getFullYear();
+			
+			document.getElementById("datum").innerHTML = dan + "/" + mesec + "/" + leto;
+			
+			//Tekoči čas
+			var ure = datum.getHours();
+			var minute = datum.getMinutes();
+			
+			if  (minute < 10)
+			{
+				minute = "0" + minute;
+			}
+			
+			document.getElementById("cas").innerHTML = ure + ":" + minute;
+			
+			
+			//Tekoči čas v AM/PM
+			var pripona = "AM";
+			var uraAm = ure;
+			
+			if (ure > 12)
+			{
+				pripona = "PM";
+				uraAm = ure - 12;
+			}
+			
+			document.getElementById("casm").innerHTML = uraAm + ":" + minute + " " + pripona;
+			
+		</script>
+		
+		
+		<footer>
+			&copy; 2021 - <script>document.write(leto)</script>, Miha Martinek
+		</footer>
+	</body>
+</html>

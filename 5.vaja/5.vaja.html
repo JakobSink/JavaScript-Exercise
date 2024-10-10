@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>5. vaja: Operatorji v JavaScriptu</title>
+</head>
+<body>
+    <h1>Izrazi z aritmetičnimi operatorji</h1>
+    <script>
+        
+        var vsota = 7 + 5;
+        document.write("Vrednost izraza: 7 + 5 =" + vsota + "<br />");
+        var vsota = 12 + 08;
+        document.write("Vrednost izraza: 12 + 08 =" + vsota + "<br />");
+        var vsota = 0.2 + 0.3;
+        document.write("Vrednost izraza: 0.2 + 0.3 =" + vsota + "<br />");
+        var vsota = 0.36 + 12.65;
+        document.write("Vrednost izraza: 0.36 + 12.65 =" + vsota + "<br />");
+        var razlika = 13 - 45;
+        document.write("Vrednost izraza: 13 - 45 =" + razlika + "<br />");
+        var razlika = 0.056 - 0.042;
+        document.write("Vrednost izraza: 0,056 - 0,042 =" + razlika + "<br />");
+        var produkt = 25 * 56;
+        document.write("Vrednost izraza: 25 * 56 =" + produkt + "<br />");
+        var produkt = 0.2 * 10;
+        document.write("Vrednost izraza: 0,2 * 10 =" + produkt + "<br />");
+        var kolicnik = 65 / 21;
+        document.write("Vrednost izraza: 65 / 21 =" + kolicnik + "<br />");
+        var kolicnik = 6987 / 23.26;
+        document.write("Vrednost izraza: 6987 / 23,26=" + kolicnik + "<br />");
+        var kolicnik = 20 / 0;
+        document.write("Vrednost izraza: 20 / 0 =" + kolicnik + "<br />");
+        var kolicnik = -10 / 0;
+        document.write("Vrednost izraza: -10 / 0 =" + kolicnik + "<br />");
+        var kolicnik = 123 % 20;
+        document.write("Vrednost izraza: 123 % 20 =" + kolicnik + "<br />");
+        var kolicnik = 2 + 2 * 2;
+        document.write("Vrednost izraza: 2 + 2 * 2 =" + kolicnik + "<br />");
+        var izraza = (2 + 2) * 2;
+        document.write("Vrednost izraza: (2 + 2) * 2 =" + izraza + "<br />");
+        var izraza = 5^3 + 3^2 + 8;
+        document.write("Vrednost izraza: 5^3 + 3^2 + 8 =" + izraza + "<br />");
+        var izraza = (10 % 6 - 1 + (5 / 4 + 13.0 / 2));
+        document.write("Vrednost izraza: (10 % 6 - 1 + (5 / 4 + 13.0 / 2)) =" + izraza + "<br />");
+        var vsota = 10 + 1;
+        document.write("Vrednost izraza: 10 + 1 =" + vsota + "<br />");
+        var razlika = 10 - 1;
+        document.write("Vrednost izraza: 10 - 1 =" + razlika + "<br />");
+ 
+    
+    </script>
+
+<h1>Skrajšani izrazi</h1>
+<script>
+    var x=100; document.write("x = " + x + "<br />");
+    var y=50; document.write("y = " + y + "<br />");
+    var z = 80; document.write("z = " + z + "<br />");
+    document.write("Vrednost izraza: y = y - 10 = " + (y-=10) + "<br />");
+    document.write("Vrednost izraza: z = z * 8 = " + (z*=8) + "<br />");
+    document.write("Vrednost izraza: x = x / 25 = " + (x/=25) + "<br />");
+    document.write("Vrednost izraza: y = y % 2 = " + (y%=2) + "<br />");
+
+</script>
+        <h1>Primerjave</h1>
+    <script>
+        var primerjava = ((18 % 2 != 0) || !(3 >= 4));
+         document.writeln("Primerjava ((18 % 2 != 0) || !(3 >= 4)) vrne vrednost " + primerjava + ".<br />");
+         var primerjava = (5 > 6) && (3 > 6 || 3 < 8);
+         document.writeln("Primerjava (5 > 6) && (3 > 6 || 3 < 8) vrne vrednost " + primerjava + ".<br />");
+        
+         var primerjava = ((18 % 2 != 0) || !(3 >= 4));
+         document.writeln("Primerjava ((18 % 2 != 0) || !(3 >= 4)) vrne vrednost " + primerjava + ".<br />");
+         
+         var x = 1;
+         var primerjava = (3 < x && 40 > x || x > 50);
+         document.writeln("Primerjava ((18 % 2 != 0) || !(3 >= 4)) vrne vrednost " + primerjava + ".<br />");
+        
+         var primerjava = 0 <= x && x <= 10 || x > 100;
+         document.writeln("Primerjava 0 <= x && x <= 10 || x > 100 vrne vrednost " + primerjava + ".<br />");
+         
+         var primerjava = 0 < x && x < 40 && 0 < y && y < 40;
+         document.writeln("Primerjava 0 < x && x < 40 && 0 < y && y < 40 vrne vrednost " + primerjava + ".<br />");
+         var x = true;
+         var y = false;
+         var primerjava = (false || true) && (true && false);
+         document.writeln("Primerjava (false || true) && (true && false)vrne vrednost " + primerjava + ".<br />");
+        
+         var primerjava = (true && false) && (true || false);
+         document.writeln("Primerjava (true && false) && (true || false) vrne vrednost " + primerjava + ".<br />");
+         
+         var primerjava =( ((true && false) || false) && true);
+         document.writeln("Primerjava ((true && false) || false) && true vrne vrednost " + primerjava + ".<br />");
+        
+         var primerjava = (true && !(5%4 == 1)) || (16/5.0 == 3);
+         document.writeln("Primerjava (true && !(5%4 == 1)) || (16/5.0 == 3) vrne vrednost " + primerjava + ".<br />");
+         
+         var primerjava = ((5 >= 3) && (8%1 == 0)) || (7/2 != 3);
+         document.writeln("Primerjava ((5 >= 3) && (8%1 == 0)) || (7/2 != 3) vrne vrednost " + primerjava + ".<br />");
+         
+         var primerjava =(5 != 18) || (4 % 3 == 1);
+         document.writeln("Primerjava (5 != 18) || (4 % 3 == 1) vrne vrednost " + primerjava + ".<br />");
+
+   
+   
+   
+   
+   
+   
+   </script>
+</body>
+</html>

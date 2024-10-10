@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <meta charset="UTF-8">
+        <title>10. vaja: Nizi v JavaScriptu</title>
+
+        <style>
+            body{
+                background-color: rgba(253,225,236,0.5);
+            }
+            #naslov{
+                font-size: 2em;
+                font-weight: bolder;
+            }
+            button{
+                background-color: rgba(251,136,161,1.0);
+                border-style: 0.05em outset lightgrey;
+                padding: 10px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="naslov"></p>
+        <p id="besedilo"></p>
+
+        <button onclick="dolzina()">Dolžina stavka</button>
+        <br>
+        <p id="dolzina"></p>
+
+        <button onclick="sms()">Skrajsaj besedilo</button>
+        <br>
+        <p id="sms"></p>
+
+        <button onclick="obrni()">Obrni besedilo</button>
+        <br>
+        <p id="obrni"></p>
+
+        <button onclick="sumniki()">Zamenja sumnike</button>
+        <br>
+        <p id="nisumnikov"></p>
+
+        <script>
+            var naslov = "Kranj";
+            var besedilo = "Kranj je četrto največje mesto v Sloveniji, središče neformalne pokrajine Gorenjske in sedež istoimenske mestne občine Kranj. Zgrajen je bil na karbonatnem konglomeratu. Kranj ima močno tradicijo elektronske in gumarske industrije (Gorenjske elektrarne, Iskraemeco, Iskratel, Sava Kranj), še vedno pa je ohranil staro mestno jedro nad sotočjem Kokre in Save. Znan je tudi kot športno mesto, ki ima športni park. V parku lahko najdemo nogometno igrišče z umetno in naravno travo, teniška in košarkaška igrišča ter notranji in zunanji bazen.";
+        
+            document.getElementById("naslov").innerHTML = naslov;
+            document.getElementById("besedilo").innerHTML = besedilo;
+
+            function dolzina(){
+                document.getElementById("dolzina").innerHTML = "Zgornji opis je dolg " + besedilo.length + " znakov.";
+            }
+
+            function sms(){
+                document.getElementById("sms").innerHTML = besedilo.substr(0,156) + "  ...";
+            }
+
+            var obrnjenoBesedilo = "";
+            var stevec = besedilo.length;
+
+            function obrni(){
+                for(stevec;stevec >= 0; stevec--){
+                    obrnjenoBesedilo += besedilo.substring(stevec - 1, stevec);
+                }
+                document.getElementById("obrni").innerHTML = obrnjenoBesedilo;
+            }
+
+            var sumniki = besedilo;
+            var znak = sumniki.indexOf("Č","Ž","Š","č","ž","š");
+
+            function nisumnikov() {
+                while(znak != -1){
+                    znak = sumniki.indexOf("Č","Ž","Š","č","ž","š");
+                    sumniki = sumniki.replace("č","c");
+                    sumniki = sumniki.replace("ž","z");
+                    sumniki = sumniki.replace("š","s");
+                    sumniki = sumniki.replace("Č","C");
+                    sumniki = sumniki.replace("Ž","Z");
+                    sumniki = sumniki.replace("Š","S");
+                }
+                document.getElementById("nisumnikov").innerHTML = sumniki;
+            }
+        </script>
+    </body>
+</html>

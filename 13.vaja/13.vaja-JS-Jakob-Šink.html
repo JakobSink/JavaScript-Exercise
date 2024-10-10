@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sl">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vaja 13: Naključno število</title>
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+			h1 {
+				color: rgba(252,98,100,1.00);
+				text-align: center;
+			}
+			form, p {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#vnos {
+				background-color: rgba(252,98,100,0.20);
+				font-size: 1em;
+				padding: 5px;
+				border: none;
+			}
+			#button {
+				background-color: rgba(150,150,150,1.00);
+				border: none;
+				padding: 15px 30px 15px 30px;
+				margin-top: 10px;
+				width: 400px;
+				border-radius: 10px;
+				font-size: 1em;
+				font-weight: bold;
+			}
+			#izpis {
+				background-color: rgba(166,186,252,1.00);
+				width: 75px;
+				padding: 10px;
+				border-radius: 10px;
+				margin: 10px 170px 5px 10px;
+				color: rgba(252,89,91,1.00);
+				font-size: 1.5em;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
+		<script>
+			// generator naključnih števil
+			function generator(max) {
+				var generiranoStevilo = Math.random() * max;
+				generiranoStevilo = Math.ceil(generiranoStevilo);
+				return generiranoStevilo;
+			}
+			
+			// klic generatorja naključnih števil
+			function izpis() {
+				document.getElementById("izpis").innerHTML = generator(document.ob.vnos.value);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Generator naključnih števil</h1>
+		<form id="obrazec" name="ob">
+			<table>
+				<tr>
+					<td>Zgornja meja naključna števila:</td>
+					<td><input type="text" id="vnos" name="vnos"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" id="button" value="Generiraj naključno število" onClick="izpis()"></td>
+				</tr>
+			</table>
+		</form>
+		<p>Naključno število: <span id="izpis">1</span></p>
+	</body>
+</html>

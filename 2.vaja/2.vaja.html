@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html lang="sl">
+    <head>
+        <title>2. vaja: Prikaz podatkov JavaScript</title>
+        <meta charset="UTF-8">
+        <style>
+            h1,h2{
+                color:blue;
+            }
+        </style>
+    </head>
+    <body onload="alert('Pojavno okno, ki ga sproži JS ob zagonu strani')">
+        <h1>Prikoaz podatkov z JS</h1>
+        <h2>1. izpis podatkov v pojavno okno</h2>
+        <button onclick="alert('Pojavno okno, ki ga sproži JS ob kliku na gumb')">Klikni me, me da prikažem pojavno okno!</button>
+
+        <h2>2. Izpis podatkov v HTML</h2>
+        <p>To besedilo je običajen stavek (oznaka &lt;p&gt;)</p>
+        <script>
+            document.write("<span style='background-color:orange'>To besedilo je izpisal JS!</span>")
+        </script><br></br>
+        <button onclick="document.write('To besedilo je izpisal JS, ker si pritisnil gumb')">Klikni me da izpišem besedilo v HTML</button>
+
+        <h2>3. izpis podatkov v HTML elementu</h2>
+        <p>To besedilo je običajen stavek (oznaka &lt;p&gt;)</p>
+        <p id="odstavek" style=background-color:orange;></p>
+        <script>
+            document.getElementById("odstavek").innerHTML="To besedilo je izpisal JavaScript v HTML element &lt;p&gt;";
+        </script><br>
+
+        <button onclick="klik()">Klikni me, da izpišem besedilo v HTML element</button>
+        <p id="odstavek2"></p>
+        <script>
+            function klik(){
+                document.getElementById("odstavek2").innerHTML="To besedilo je izpisal JavaScript v HTML element &lt;p&gt;";
+            }
+        </script>
+
+        <h2>4. izpis podatkov v konzolo</h2>
+        <p>To besedilo je običajen stavek (oznaka &lt;p&gt;)</p>
+        <script>
+            console.log("To besedilo je JavaScript izpisal v konzolo!")
+        </script>
+        <button onclick="console.log('To besedilo je s klikom na gumb izpisal JavaScript v konzolo!')">Klikni me, da izpišem besedilo v konzolo!</button>
+
+    </body>
+</html>

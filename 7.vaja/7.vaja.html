@@ -1,0 +1,46 @@
+<!DOCTYPE >
+<html lang="sl">
+    <head>
+        <meata charset = "UFT-8">
+        <title>7. vaja: Zanke v JavaScriptu</title>
+
+        <style>
+            h1{
+                color:blue;
+                font-family: Arial, sans;
+                text-align: center;
+            }
+            table{
+                color: #cf5110;
+                margin: auto;
+                background-color: #f7e090;
+                border:2.5px solid #bbb;
+                /*border-collapse:collapse;*/
+            }
+            td{
+                border: 1px solid #ccc;
+                padding: 2.5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tabela poštevanke</h1>
+
+        <script>
+
+            var izpis = "<table><tr>";
+
+            for(i = 1 ; i <= 10 ; i++){
+                izpis += "<tr>";
+                    for(j = 1 ; j <= 10; j++){
+                        izpis +="<td>" + (i*j) + "</td>";
+                    }
+                    izpis += "</tr>";
+            }
+            izpis += "</td>";
+
+            document.write(izpis)
+        </script>
+    </body>
+</html>

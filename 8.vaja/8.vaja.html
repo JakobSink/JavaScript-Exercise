@@ -1,0 +1,57 @@
+<!DOCTYPE >
+<html lang="sl">
+    <head>
+        <meata charset = "UFT-8">
+        <title>8. vaja: Funkcije v JavaScriptu</title>
+
+        <style>
+            body{
+                font-family: Arial, sans;
+            }
+            h1{
+                color:blue;
+            }
+            #opis{
+                font-weight: bold;
+            }
+            #rezultat{
+                text-size-adjust: 1.2em;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Seštevanje števil</h1>
+
+        <p id="opis">Vnesi števili:</p>
+
+        <form name="obrazec">
+            <table>
+                <tr>
+                    <td>Prvo število:</td>
+                    <td><input id="prvi" name="prvi" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Prvo število:</td>
+                    <td><input id="drugi" name="drugi" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" onClick="sestej()" value="Izracunaj"></td>
+                </tr>
+            </table>
+        </form>
+        
+        <p>Vsota števil je: <span id="rezultat"></span></p>
+
+        <script>
+            function sestej() {
+                var prvi = Number(document.getElementById("prvi").value);
+                //var drugi = document.getElementById("drugi").value;
+                var drugi = parseInt(obrazec.drugi.value);
+
+                var rezultat = prvi + drugi;
+                var izpis = document.getElementById("rezultat").innerHTML = rezultat;
+            }
+        </script>
+    </body>
+</html>
